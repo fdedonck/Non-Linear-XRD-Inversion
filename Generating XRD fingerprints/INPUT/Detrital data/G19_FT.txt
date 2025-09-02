@@ -1,0 +1,65 @@
+
+Filename:
+	C:\Program Files\Thermo Electron\WinXRD\Datafiles\F_HERMAN\FIEN\G19_FT.raw
+
+File Created:
+	October 09, 2019 - 08:48 AM
+
+Specimen Id:
+	G19 FT RT
+
+Specimen Name:
+	
+
+Specimen Description:
+	
+
+Comment:
+Scan Type: 2Theta Scan
+Start Angle: 2 deg.
+Stop Angle: 65 deg.
+Num Points: 3151
+Step Size: 0.02 deg.
+Scan Rate: 1.000000
+Scan Mode: Continuous
+Wavelength: 1.540562
+\Kalpha1: 1.540562	\Kalpha2: 1.544390	\Kbeta: 1.392218
+
+Optics:
+		Detector:
+			 Type: Fixed Slits
+		Tube: 
+			 Type: Fixed Slits
+
+
+Datas:
+ Pos [deg]       Rate [CPS]      ESD [-]
+
+Range 1 ---> Iteration 1
+   2.000        866.67	    32.249
+   2.020        805.00	    31.081
+   2.040        754.17	    30.083
+   2.060        819.17	    31.353
+   2.080        744.17	    29.883
+   2.100        805.00	    31.081
+   2.120        801.67	    31.016
+   2.140        750.00	    30.000
+   2.160        816.67	    31.305
+   2.180        767.50	    30.348
+   2.200        732.50	    29.648
+   2.220        768.33	    30.364
+   2.240        741.67	    29.833
+   2.260        749.17	    29.983
+   2.280        707.50	    29.138
+   2.300        612.50	    27.111
+   2.320        653.33	    28.000
+   2.340        627.50	    27.441
+   2.360        627.50	    27.441
+   2.380        654.17	    28.018
+   2.400        647.50	    27.875
+   2.420        652.50	    27.982
+   2.440        623.33	    27.350
+   2.460        604.17	    26.926
+   2.480        604.17	    26.926
+   2.500        601.67	    26.870
+   2.520        585.83	    26.514

@@ -1,0 +1,15 @@
+Run Parameters for Forw_Inv_Synth_Source
+========================================
+
+# Flags and Settings
+Number of most relevant minerals to keep (if None: keep all)     :    None
+Prior erosion rates     :    Total erosion uniformally distributed
+Starting point of non linear iteration     :    Specified in the "Uniform Prior?" section
+Nonlinear inversion     :    Quasi Newton solution - preconditioning with Hessian
+
+# Model Parameters
+sigma_cov (for building model covariance) = 3
+L (for building model covariance) = 1200
+sigma_d (for building data covariance) = 0.01
+n_m (max number of non linear steps) = 20
+mu (step size of non-lin. iterations) = 0.1
