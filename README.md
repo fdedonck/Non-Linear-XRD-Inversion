@@ -22,26 +22,27 @@ In an earlier article, we have shown how to use a linear inversion approach to o
 ### Inversion
 The detrital data are a weighted average of the tracer mineral concentrations, with the weights being the erosion rates:
 
-$d_i=\ \frac{\sum_{j=1}^{n}{A_{ij}\cdot{\exp(\varepsilon}_j)}}{\sum_{j=1}^{n}{{\exp(\varepsilon}_j)}}\ for\ i=1,\ \ldots m$
+$$
+d_i = \frac{\sum_{j=1}^{n} A_{ij} \cdot \exp(\varepsilon_j)}{\sum_{j=1}^{n} \exp(\varepsilon_j)} \quad \text{for } i = 1, \ldots, m
+$$
 
 Where $d_i$ is the tracer abundance of tracer mineral i in the suspended sediments, $A_{ij}$ is the tracer abundance of tracer mineral $i$ at source position $j$ (pixel $j$), and the erosion rates are modelled in log-space: $\varepsilon_j=\log(\frac{{\dot{e}}_j}{{\dot{e}}_0})$ with  ${\dot{e}}_j$ being the erosion rate at pixel j and ${\dot{e}}_0$ is a reference erosion rate (set to 1) to respect dimensional consistency. We cast the erosion rates in log-space to impose a positivity constraint, hence making this non-linear.
 
 The forward model reads as:
 
-$\mathbf{d}=\mathbf{A}\ \cdot\exp(\boldsymbol{\varepsilon})$
+$$\mathbf{d}=\mathbf{A}\ \cdot\exp(\boldsymbol{\varepsilon})$$
 
 where $\mathbf{d}$ is the sediment data, containing the tracer concentration of each mineral,
 $\mathbf{A}$ is the tracer concentration of each mineral, for every pixel,
 $\boldsymbol{\varepsilon}$ is a vector containing the logarithm of the erosion rate for every pixel
 
 
-To infer erosion rates from $\mathbf{d}$ and \mathbf{A}, we use the quasi-newtonian approach:
+To infer erosion rates from $\mathbf{d}$ and $\mathbf{A}$, we use the quasi-newtonian approach:
+![Gauss-Newton update](https://latex.codecogs.com/png.image?\dpi{200}\bg{black}{\color{white}{\boldsymbol{\varepsilon}_{n+1}=\boldsymbol{\varepsilon}_n-\mu_n(\mathbf{G}_n^T\mathbf{C_d}^{-1}\mathbf{G}_n)^{-1}(\mathbf{G}_n^T\mathbf{C_d}^{-1}(\mathbf{d}_n-\mathbf{d}_{obs})+\mathbf{C_m}^{-1}(\boldsymbol{\varepsilon}_k-\boldsymbol{\varepsilon}_{prior})))
 
-${\ \boldsymbol{\varepsilon}}_{n+1}=\ \boldsymbol{\varepsilon}_n\ -\ \mu_n\left(\mathbf{G}_n^T\mathbf{C_d}^{-1}\mathbf{G}_n\right)^{-1}\left(\mathbf{G}_n^T\mathbf{C_d}^{-1}\left(\mathbf{d}_n-\mathbf{d}_{obs}\right)+\mathbf{C_m}^{-1}\left(\boldsymbol{\varepsilon}_k-\boldsymbol{\varepsilon}_{prior}\right)\right)$
 
 or the steepest descent approach:
-
-$\boldsymbol{\varepsilon}_{n+1}=\ \boldsymbol{\varepsilon}_n\ -\ \mu_n({\mathbf{C_m}\mathbf{G}}_n^T\mathbf{C_d}^{-1}\left(\mathbf{d}_n-\mathbf{d}_{obs}\right)+(\boldsymbol{\varepsilon}_k-\boldsymbol{\varepsilon}_{prior}))$
+![Steepest descent update](https://latex.codecogs.com/png.image?\dpi{200}\bg{black}{\color{white}{\boldsymbol{\varepsilon}_{n+1}=\boldsymbol{\varepsilon}_n-\mu_n(\mathbf{C_m}\mathbf{G}_n^T\mathbf{C_d}^{-1}(\mathbf{d}_n-\mathbf{d}_{obs})+(\boldsymbol{\varepsilon}_k-\boldsymbol{\varepsilon}_{prior}))}})
 
 where $\mathbf{G}_n$ is the Jacobian at iteration $n$, $\mathbf{C_m}$ is the model covariance, $\mathbf{C_d}$ is the data covariance and $\mu_n$ is the step size.
 
@@ -83,7 +84,7 @@ In the folder ```Zircon testing``` you can find the scripts to a) generate the z
 ├── INPUT/          # Input for forward-inverse testing
 ├── OUTPUT/         # Results of tests
 ├── README.md       # This file
-├── requirements.txt       # Python dependencies
+├── requirements.yml            # Python dependencies
 ├── Zircon testing/ 
 │   ├── Generate_Zircon_Fingerprints.py         # Generate zircon detrital and source fingerprints
 │   ├── NonLinear_ZirconSamples.py              # Run the inversion on the detrital zircon data
